@@ -8,7 +8,8 @@ use App\Models\Order;
 use App\Models\User;
 use App\Models\Category;
 use Carbon\Carbon;
-use DB;
+// use DB;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 
@@ -167,23 +168,4 @@ class OrderController extends Controller
         ->first();
         return $invoice;
     }
-    // public function fetchByInvoicek(Request $request){
-    //     if($request->invoice_number){
-    //         $invoice = Order::where('invoice_number','Like',"%$request->invoice_number%")
-    //         // ->orWhere('purchaser_id','Like',"%$key%")
-    //         ->first();
-    //         return $invoice;
-    //     }
-    // }
-
-    // public function fetchByDate(Request $request){
-    //     $from = $request->from ?? Carbon::now()->subDays(30)->format("Y-m-d");
-    //     $to = $request->to ?? Carbon::now()->addDays(1)->format("Y-m-d");
-    //     // $from =Carbon::now()->format("Y-m-d");
-    //     // $to =Carbon::now()->addDays(1)->format("Y-m-d");
-    //     // $invoice = Order::whereBetween('order_date',[2020-04-15, 2020-04-24])->get();
-    //     $invoice = Order::whereBetween('order_date', [$from, $to])->get();
-    //     // $invoice = Order::whereBetween('order_date', [$from, $to])->get();
-    //     return $invoice;
-    // }
 }

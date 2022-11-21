@@ -19,17 +19,3 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::prefix('category')->group(function(){
-    Route::get('/', [CategoryController::class, 'index']);
-
-});
-
-Route::prefix('order')->group(function(){
-    Route::get('/', [OrderController::class, 'index']);
-    Route::get('/search/{id}', [OrderController::class, 'fetchByInvoice']);
-    // Route::get('/', [OrderController::class, 'fetchByInvoicek']);
-});
-Route::prefix('search-by-date')->group(function(){
-    Route::get('/', [OrderController::class, 'fetchByDate']);
-});
